@@ -1,4 +1,4 @@
-#include "../include/environment.h"
+#include "environment.h"
 #include <raylib.h>
 
 void Environment::genBuild( const int &maxBuilds, const int &screenHeight ){
