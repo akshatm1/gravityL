@@ -1,0 +1,69 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/usr/lib/gcc/x86_64-pc-linux-gnu/15/include/g++-v15",
+						"/usr/lib/gcc/x86_64-pc-linux-gnu/15/include/g++-v15/x86_64-pc-linux-gnu",
+						"/usr/lib/gcc/x86_64-pc-linux-gnu/15/include/g++-v15/backward",
+						"/usr/lib/clang/22/include",
+						"/usr/include"
+					],
+					"linkDirectories" : 
+					[
+						"/usr/lib/gcc/x86_64-pc-linux-gnu/15",
+						"/usr/lib64",
+						"/lib64",
+						"/usr/x86_64-pc-linux-gnu/lib",
+						"/lib",
+						"/usr/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"m",
+						"gcc_s",
+						"gcc",
+						"c",
+						"gcc_s",
+						"gcc"
+					]
+				},
+				"path" : "/usr/lib/llvm/22/bin/clang++",
+				"version" : "22.1.8"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"m",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

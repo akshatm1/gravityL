@@ -1,0 +1,3 @@
+/home/akshat/cppProjects/gravityLImproved/build/CMakeFiles/gravityL.dir
+/home/akshat/cppProjects/gravityLImproved/build/CMakeFiles/edit_cache.dir
+/home/akshat/cppProjects/gravityLImproved/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/akshat/cppProjects/gravityLImproved/build",
+  "command": "/usr/bin/c++   -std=gnu++20 -Wall -Wextra -O3 -march=native -flto -o CMakeFiles/my_program.dir/main.cpp.o -c /home/akshat/cppProjects/gravityL/main.cpp",
+  "file": "/home/akshat/cppProjects/gravityLImproved/src/main.cpp",
+  "output": "CMakeFiles/my_program.dir/main.cpp.o"
+}
+]
