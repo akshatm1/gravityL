@@ -13,7 +13,7 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 add_executable(gravityL ${SOURCES})
 
 target_include_directories(gravityL PUBLIC
-	"${CMAKE_CURRENT_SOURCE_DIR}/include"
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/*"
     "${RAYLIB_INCLUDE_DIRS}"
     "${raylib_INCLUDE_DIRS}"
 )
