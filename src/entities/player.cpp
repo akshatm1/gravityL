@@ -7,28 +7,33 @@ Player::Player(const float &x, const float &y){
     velocity = { 0.0f, 0.0f };
     box.color = RED;
 
-    accelFactor = { 2000.0f, 30.0f };
-    friction = 10.0f;
-    maxSpeed = 5000.0f;
+    accelFactor = { 7000000.0f, 30.0f };
+    friction = 5.0f;
+    maxSpeed = 5000000000.0f;
 }
 
 void Player::update(){
     float dt = GetFrameTime();
+    if(dt > 0.0016) dt = 0.0016;
+    inputDir.x = 0;
 
     if(IsKeyDown(KEY_RIGHT)) inputDir.x += 1.0f;
     if(IsKeyDown(KEY_LEFT)) inputDir.x -= 1.0f;
     if(IsKeyDown(KEY_SPACE)) inputDir.y += 1.0f;
 
+    
+
     if (Vector2Length(inputDir) > 0) {
         inputDir = Vector2Normalize(inputDir);
+    
+        velocity.x = inputDir.x * accelFactor.x * dt;
+        velocity.y = inputDir.y * accelFactor.y * dt;
+
+    } else {
+        
+        velocity.x -= velocity.x * friction * dt;
+        velocity.y -= velocity.y * friction * dt;
     }
-
-    velocity.x = inputDir.x * accelFactor.x * dt;
-    velocity.y = inputDir.y * accelFactor.y * dt;
-
-    frictionFactor = 1/( 1 + friction * dt );
-    velocity.x *= frictionFactor;
-    velocity.y *= frictionFactor;
 
     if ( Vector2Length(velocity) > maxSpeed ) {
         velocity = Vector2Scale(velocity, maxSpeed);

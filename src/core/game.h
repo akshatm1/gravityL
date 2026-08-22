@@ -19,4 +19,6 @@ public:
     ~Game();
 
     void run();
+
+    const Player& getPlayerREF() const { return player; }
 };

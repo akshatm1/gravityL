@@ -24,6 +24,8 @@ void Game::draw(){
             world.draw();
             player.draw();
         EndMode2D();
+
+        DrawText(TextFormat("velocity: %i", getPlayerREF().getVelocity().x), 50, 20, 25,YELLOW);
     EndDrawing();
 
 }

@@ -26,4 +26,5 @@ public:
     void draw();
 
     Vector2 getPosition() const { return position; }
+    Vector2 getVelocity() const { return velocity; }
 };
