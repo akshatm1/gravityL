@@ -11,6 +11,7 @@ private:
     float maxSpeed;
     float friction;
     float frictionFactor;
+    bool collisionDec;
 
     struct play{
         Rectangle dimen;
