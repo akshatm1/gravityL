@@ -8,10 +8,14 @@ private:
 
     Vector2 inputDir;
     Vector2 accelFactor;
+
     float maxSpeed;
-    float friction;
-    float frictionFactor;
+    float gravity;
     bool collisionDec;
+    
+    float friction_air;
+    float friction_gnd;
+
 
     struct play{
         Rectangle dimen;
