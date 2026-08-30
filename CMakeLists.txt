@@ -31,6 +31,6 @@ target_link_options(gravityL PRIVATE
 )
 
 # 3. Release mode optimizations (Optional - uncomment if needed)
-# target_compile_options(gravityL PRIVATE
-#     $<$<CONFIG:Release>:-O3 -march=native -flto>
-# )
+target_compile_options(gravityL PRIVATE
+    $<$<CONFIG:Release>:-O3 -march=native -flto>
+)
