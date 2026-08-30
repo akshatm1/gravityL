@@ -9,13 +9,18 @@ private:
     Vector2 inputDir;
     Vector2 accelFactor;
 
-    float maxSpeed;
-    float gravity;
-    bool collisionDec;
-    
-    float friction_air;
-    float friction_gnd;
+    float maxSpeed{};
+    float gravity{};
+    float jumpTimer{};
 
+    bool collisionDec{};
+    bool invisBoundL{};
+    bool invisBoundR{};
+
+    float friction_air{};
+    float friction_gnd{};
+
+    Rectangle flatCD;
 
     struct play{
         Rectangle dimen;
@@ -32,4 +37,5 @@ public:
 
     Vector2 getPosition() const { return position; }
     Vector2 getVelocity() const { return velocity; }
+
 };
