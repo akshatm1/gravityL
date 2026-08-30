@@ -7,7 +7,7 @@ void Environment::genBuild( const int &maxBuilds, const int &screenHeight ){
     for ( unsigned long i{}; i < rectangleBuildings.size(); i++) {
         rectangleBuildings[i].rect.width = { (float)GetRandomValue(50,100) };
         rectangleBuildings[i].rect.height = { (float)GetRandomValue(200, 650) };
-        rectangleBuildings[i].rect.x = { -13000.0f + buildSpacing };
+        rectangleBuildings[i].rect.x = { -5950.0f + buildSpacing };
         rectangleBuildings[i].rect.y = { screenHeight - 100 - rectangleBuildings[i].rect.height };
         buildSpacing += rectangleBuildings[i].rect.width;
 
@@ -25,7 +25,7 @@ void Environment::genStar( const int &maxStars){
         stars[i].dimen.height = { 3.0f };
         stars[i].dimen.width = { 3.0f };
         stars[i].dimen.x = { (float)GetRandomValue(-10000, 10000) };
-        stars[i].dimen.y = { (float)GetRandomValue(-100, 2000)};
+        stars[i].dimen.y = { (float)GetRandomValue(-1000, 300)};
         stars[i].color = {255, 255, 255, 255};
     }
 }
