@@ -25,7 +25,7 @@ void Game::draw(){
             player.draw();
         EndMode2D();
 
-        DrawText(TextFormat("velocity: %i", getPlayerREF().getVelocity().x), 50, 20, 25,YELLOW);
+        DrawText(TextFormat("velocity: %i", getPlayer().getVelocity().x), 50, 20, 25,YELLOW);
     EndDrawing();
 
 }
@@ -34,7 +34,7 @@ void Game::update(){
 
     mainCamera.target = { player.getPosition().x, player.getPosition().y };
     mainCamera.offset = { (float)SCREEN_WIDTH/2, (float)SCREEN_HEIGHT/2 };
-    mainCamera.zoom = { 1.0f };
+    mainCamera.zoom = { 0.50f };
     player.update();
 
 }

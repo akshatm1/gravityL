@@ -4,11 +4,11 @@
 
 class Game{
 private:
-    static constexpr int SCREEN_WIDTH{ 1280 };
-    static constexpr int SCREEN_HEIGHT{ 720 };
+    static constexpr int SCREEN_WIDTH{ 1366 };
+    static constexpr int SCREEN_HEIGHT{ 768 };
     static constexpr int TARGET_FPS{ 60 };
-    static constexpr int MAX_BUILDS{ 300 };
-    static constexpr int MAX_STARS{ 3000 };
+    static constexpr int MAX_BUILDS{ 180 };
+    static constexpr int MAX_STARS{ 1000 };
     Player player;
     Environment world;
     Camera2D mainCamera = {  };
@@ -20,5 +20,5 @@ public:
 
     void run();
 
-    const Player& getPlayerREF() const { return player; }
+    const Player& getPlayer() const { return player; }
 };
