@@ -1,6 +1,6 @@
 #pragma once
 #include "../world/environment.h"
-#include "../entities/player.h"
+#include "../entities/player/player.h"
 
 class Game{
 private:
