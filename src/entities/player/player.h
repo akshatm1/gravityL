@@ -1,8 +1,11 @@
 #pragma once
+#include "player_arrow.h"
 #include <raylib.h>
 
 class Player{
 private:
+
+    ArrowGun gun;
     Vector2 position;
     Vector2 velocity;
 
@@ -32,10 +35,11 @@ private:
 public:
     Player(const float &x, const float &y);
 
-    void update();
+    void update( const float &x, const float &y );
     void draw();
 
     Vector2 getPosition() const { return position; }
     Vector2 getVelocity() const { return velocity; }
+    Rectangle getPlayerDimen() const { return box.dimen; }
 
 };
