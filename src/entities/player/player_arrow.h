@@ -7,8 +7,11 @@ class ArrowGun{
 private:
 
     Vector2 mousePos;
-    Vector2 centerPos;
+    Vector2 mainCenterPos;
+    Vector2 arrowCenterPos;
+
     Vector2 arrowCoord;
+    Vector2 maxCursorBound;
 
     float dx{};
     float dy{};
@@ -17,7 +20,7 @@ private:
     float angleInRad{};
 
 public:
-    ArrowGun( const float &x, const float &y );
+    ArrowGun();
 
     void update( const float &x, const float &y );
     void draw();

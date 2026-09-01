@@ -5,7 +5,7 @@
 #include <raylib.h>
 #include <raymath.h>
 
-Player::Player(const float &x, const float &y) : gun(x, y) {
+Player::Player(const float &x, const float &y) {
     position = { x/2, y/2 };
     velocity = { 0.0f, 0.0f };
     box.color = RED;
@@ -106,7 +106,7 @@ float dt = GetFrameTime();
 
     }
 
-    gun.update( x, y );
+    gun.update( position.x, position.y );
 
 }
 
