@@ -5,7 +5,7 @@
 #include <raylib.h>
 #include <raymath.h>
 
-Player::Player(const float &x, const float &y) {
+Player::Player( const float &x, const float &y) {
     position = { x/2, y/2 };
     velocity = { 0.0f, 0.0f };
     box.color = RED;
@@ -30,11 +30,11 @@ float dt = GetFrameTime();
     if (dt > 0.05f) dt = 0.05f; 
 
     inputDir = { 0.0f, 0.0f };
-    if (IsKeyDown(KEY_RIGHT)) inputDir.x += 1.0f;
-    if (IsKeyDown(KEY_LEFT))  inputDir.x -= 1.0f;
+    if (IsKeyDown(KEY_APOSTROPHE)) inputDir.x += 1.0f;
+    if (IsKeyDown(KEY_L))  inputDir.x -= 1.0f;
 
 
-    if ( IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_RIGHT) ){
+    if ( IsKeyDown(KEY_L) || IsKeyDown(KEY_APOSTROPHE) ){
         velocity.x += inputDir.x * accelFactor.x * dt;
     } 
 
@@ -110,9 +110,9 @@ float dt = GetFrameTime();
 
 }
 
-void Player::draw(){
+void Player::draw( const Texture2D &ap ){
 
     DrawRectangleRec(box.dimen, box.color);
-    gun.draw();
+    gun.draw( ap );
 
 }

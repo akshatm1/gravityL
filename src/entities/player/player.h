@@ -36,7 +36,7 @@ public:
     Player(const float &x, const float &y);
 
     void update( const float &x, const float &y );
-    void draw();
+    void draw( const Texture2D &ap );
 
     Vector2 getPosition() const { return position; }
     Vector2 getVelocity() const { return velocity; }

@@ -23,6 +23,6 @@ public:
     ArrowGun();
 
     void update( const float &x, const float &y );
-    void draw();
+    void draw( const Texture2D &ap );
 
 };

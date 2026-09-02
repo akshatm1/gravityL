@@ -6,9 +6,12 @@ Game::Game() : player((float)SCREEN_WIDTH, (float)SCREEN_HEIGHT){
     SetConfigFlags(FLAG_MSAA_4X_HINT);
 
     InitWindow( SCREEN_WIDTH, SCREEN_HEIGHT, "GravityL" );
-    SetTargetFPS( TARGET_FPS );
+    ChangeDirectory(GetPrevDirectoryPath(GetWorkingDirectory()));
 
+    SetTargetFPS( TARGET_FPS );
     DisableCursor();
+
+    arrowPointer = LoadTexture("assets/arrow.png");
 
     world.genStar(MAX_STARS);
     world.genBuild(MAX_BUILDS, SCREEN_HEIGHT);
@@ -17,6 +20,7 @@ Game::Game() : player((float)SCREEN_WIDTH, (float)SCREEN_HEIGHT){
 }
 
 Game::~Game(){
+    UnloadTexture( arrowPointer );
     CloseWindow();
 }
 
@@ -27,7 +31,7 @@ void Game::draw(){
     BeginDrawing();
         BeginMode2D(mainCamera);
             world.draw();
-            player.draw();
+            player.draw( arrowPointer );
         EndMode2D();
 
         DrawText(TextFormat("velocity: %i", getPlayer().getVelocity().x), 50, 20, 25,YELLOW);

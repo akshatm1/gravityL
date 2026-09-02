@@ -1,6 +1,7 @@
 #pragma once
 #include "../world/environment.h"
 #include "../entities/player/player.h"
+#include <raylib.h>
 
 class Game{
 private:
@@ -9,11 +10,16 @@ private:
     static constexpr int TARGET_FPS{ 60 };
     static constexpr int MAX_BUILDS{ 180 };
     static constexpr int MAX_STARS{ 1000 };
+
     Player player;
     Environment world;
     Camera2D mainCamera = {  };
+    
     void update();
     void draw();
+
+    Texture2D arrowPointer;
+
 public:
     Game();
     ~Game();

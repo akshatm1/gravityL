@@ -10,14 +10,18 @@ void ArrowGun::update( const float &x, const float &y ){
     arrowLength = 150.0f;
 
 
+    /*
     if ( GetMouseDelta().y > 0.1 ) {
         angleInRad += 0.1;
     }
     if ( GetMouseDelta().y < -0.1 ) {
         angleInRad -= 0.1;
     }
+    */
 
-    arrowCenterPos = { ( 100 * cos(angleInRad) + mainCenterPos.x ), ( 100 * sin(angleInRad) + mainCenterPos.y ) };
+    angleInRad += GetMouseDelta().x / 500;
+
+    arrowCenterPos = { ( 60 * cos(angleInRad) + mainCenterPos.x ), ( 60 * sin(angleInRad) + mainCenterPos.y ) };
 
 
 
@@ -26,13 +30,15 @@ void ArrowGun::update( const float &x, const float &y ){
     dy = mousePos.y - centerPos.y;
     angleInRad = atan2(dy, dx);
     */
+
     arrowCoord.x = arrowLength * cos( angleInRad ) + arrowCenterPos.x ;
     arrowCoord.y = arrowLength * sin( angleInRad ) + arrowCenterPos.y ;
     
 
 }
 
-void ArrowGun::draw(){
+void ArrowGun::draw( const Texture2D &ap ){
 
-    DrawLineEx(arrowCenterPos, arrowCoord, 5.0f, WHITE);
+    //DrawLineEx(arrowCenterPos, arrowCoord, 5.0f, WHITE);
+    DrawTexturePro( ap, {0, 0, 155, 50}, { arrowCenterPos.x, arrowCenterPos.y, 190, 50 }, { 0, 25 }, ( angleInRad * 57.2958f), WHITE);
 }
