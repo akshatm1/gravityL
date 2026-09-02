@@ -18,7 +18,7 @@ void Environment::genBuild( const int &maxBuilds, const int &screenHeight ){
     }
 }
 
-void Environment::genStar( const int &maxStars){
+void Environment::genStar( const int &maxStars ){
     stars.resize(maxStars);
 
     for(unsigned long i{}; i < stars.size(); i++){
