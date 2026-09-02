@@ -1,10 +1,12 @@
 #pragma once
 #include <raylib.h>
 #include <raymath.h>
-#include <cmath>
+#include "../../core/bullet.h"
 
 class ArrowGun{
 private:
+
+    Bullet playerBullet;
 
     Vector2 mousePos;
     Vector2 mainCenterPos;

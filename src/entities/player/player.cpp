@@ -11,8 +11,8 @@ Player::Player( const float &x, const float &y) {
     box.color = RED;
 
     accelFactor = { 4000.0f, 600.0f };
-    maxSpeed = 1000.0f;
-    gravity = 1500.0f;
+    maxSpeed = 2000.0f;
+    gravity = 2000.0f;
     jumpTimer = 0.0f;
 
     friction_gnd = 15.0f;
@@ -30,8 +30,8 @@ float dt = GetFrameTime();
     if (dt > 0.05f) dt = 0.05f; 
 
     inputDir = { 0.0f, 0.0f };
-    if (IsKeyDown(KEY_APOSTROPHE)) inputDir.x += 1.0f;
-    if (IsKeyDown(KEY_L))  inputDir.x -= 1.0f;
+    if (IsKeyDown(KEY_APOSTROPHE)) inputDir.x += 1.75f;
+    if (IsKeyDown(KEY_L))  inputDir.x -= 1.75f;
 
 
     if ( IsKeyDown(KEY_L) || IsKeyDown(KEY_APOSTROPHE) ){
@@ -58,7 +58,7 @@ float dt = GetFrameTime();
 
 
     if ( collisionDec && IsKeyPressed(KEY_SPACE) ) {
-        velocity.y = -600.0f; 
+        velocity.y = -1100.0f; 
     }
     else if ( !collisionDec && IsKeyPressed(KEY_SPACE) ){
 
@@ -68,7 +68,7 @@ float dt = GetFrameTime();
     }
     if( jumpTimer > 0 && collisionDec ){
         
-        velocity.y = -600.0f;
+        velocity.y = -1100.0f;
         jumpTimer = 0.0f;
 
     }
