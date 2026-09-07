@@ -5,7 +5,7 @@
 #include <raylib.h>
 #include <raymath.h>
 
-Player::Player( const float &x, const float &y) {
+Player::Player( const float& x, const float& y) {
     position = { x/2, y/2 };
     velocity = { 0.0f, 0.0f };
     box.color = RED;
@@ -22,7 +22,7 @@ Player::Player( const float &x, const float &y) {
 
 }
 
-void Player::update( const float &x, const float &y ){
+void Player::update( const float& x, const float& y ){
 
 // AI copy-pasted and some self-tweaked, I know I took help from an LLM but I just couldn't figure the physics out for so long:
 
@@ -110,9 +110,9 @@ float dt = GetFrameTime();
 
 }
 
-void Player::draw( const Texture2D &ap ){
+void Player::draw(){
 
     DrawRectangleRec(box.dimen, box.color);
-    gun.draw( ap );
+    gun.draw();
 
 }

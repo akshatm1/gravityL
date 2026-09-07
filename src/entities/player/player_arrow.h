@@ -2,6 +2,7 @@
 #include <raylib.h>
 #include <raymath.h>
 #include "../../core/bullet.h"
+#include "../../core/assetManager.h"
 
 class ArrowGun{
 private:
@@ -24,7 +25,7 @@ private:
 public:
     ArrowGun();
 
-    void update( const float &x, const float &y );
-    void draw( const Texture2D &ap );
+    void update( const float& x, const float& y );
+    void draw();
 
 };

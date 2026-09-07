@@ -1,6 +1,7 @@
 #pragma once
 #include "../world/environment.h"
 #include "../entities/player/player.h"
+#include "assetManager.h"
 #include <raylib.h>
 
 class Game{
@@ -13,12 +14,14 @@ private:
 
     Player player;
     Environment world;
+
     Camera2D mainCamera = {  };
     
     void update();
     void draw();
 
     Texture2D arrowPointer;
+    Texture2D bulletTexture;
 
 public:
     Game();

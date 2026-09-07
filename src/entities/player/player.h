@@ -33,10 +33,10 @@ private:
 
 
 public:
-    Player(const float &x, const float &y);
+    Player(const float& x, const float& y);
 
-    void update( const float &x, const float &y );
-    void draw( const Texture2D &ap );
+    void update( const float& x, const float& y );
+    void draw();
 
     Vector2 getPosition() const { return position; }
     Vector2 getVelocity() const { return velocity; }

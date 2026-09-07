@@ -4,14 +4,21 @@
 Game::Game() : player((float)SCREEN_WIDTH, (float)SCREEN_HEIGHT){
 
     SetConfigFlags(FLAG_MSAA_4X_HINT);
-
     InitWindow( SCREEN_WIDTH, SCREEN_HEIGHT, "GravityL" );
-    ChangeDirectory(GetPrevDirectoryPath(GetWorkingDirectory()));
+    
 
+    ChangeDirectory(GetPrevDirectoryPath(GetWorkingDirectory()));
     SetTargetFPS( TARGET_FPS );
     DisableCursor();
 
+/*
+    OLD METHOD:
     arrowPointer = LoadTexture("assets/arrow.png");
+    bulletTexture = LoadTexture("assets/orange_bullet_improved.png");
+*/
+
+    AssetManager::loadTexture2D( "arrowPointer", "assets/arrow.png" );
+    AssetManager::loadTexture2D( "bulletTexture",  "assets/orange_bullet_improved.png" );
 
     world.genStar(MAX_STARS);
     world.genBuild(MAX_BUILDS, SCREEN_HEIGHT);
@@ -20,8 +27,17 @@ Game::Game() : player((float)SCREEN_WIDTH, (float)SCREEN_HEIGHT){
 }
 
 Game::~Game(){
+
+/*  
+    OLD METHOD:
     UnloadTexture( arrowPointer );
+    UnloadTexture( bulletTexture );
+*/
+
+    AssetManager::unloadALLTexture2D();
+
     CloseWindow();
+
 }
 
 void Game::draw(){
@@ -29,12 +45,16 @@ void Game::draw(){
     ClearBackground(BLACK);
 
     BeginDrawing();
+
         BeginMode2D(mainCamera);
+    
             world.draw();
-            player.draw( arrowPointer );
+            player.draw();
+        
         EndMode2D();
 
         DrawText(TextFormat("velocity: %i", getPlayer().getVelocity().x), 50, 20, 25,YELLOW);
+
     EndDrawing();
 
 }
@@ -49,8 +69,11 @@ void Game::update(){
 }
 
 void Game::run(){
+
     while (!WindowShouldClose()) {
+
         update();
         draw();
+
     }
 }
