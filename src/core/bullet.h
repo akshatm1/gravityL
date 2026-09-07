@@ -2,15 +2,12 @@
 #include <raylib.h>
 #include <raymath.h>
 #include <vector>
-#include <utility>
 
 struct bullet{
     
     Vector2 pos;
-    float speed;
-    float angle;
-    bool colDec{};
-
+    float speed{};
+    float angle{};
 };
 
 class Bullet{
@@ -19,10 +16,12 @@ private:
     std::vector<bullet> bullets;
 
 public:
-    //Bullet( const Vector2 &ogPos, const float &bulSpeed );
     Bullet() = default;
-    void create( const Vector2 &ogPos, const float &bulSpeed, const float& ang );
+    
+    void create( const Vector2& ogPos, const float& bulSpeed, const float& ang );
     void update( const Vector2& playerPos );
-    void draw();
+
+    void drawRec();
+    void drawTex( const Texture2D& bulletT );
 
 };
