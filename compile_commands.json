@@ -1,8 +1,1 @@
-[
-{
-  "directory": "/home/akshat/Projects/gravityL/build",
-  "command": "/usr/bin/c++   -std=gnu++20 -Wall -Wextra -O3 -march=native -flto -o CMakeFiles/my_program.dir/main.cpp.o -c /home/akshat/Projects/gravityL/main.cpp",
-  "file": "/home/akshat/Projects/gravityL/src/main.cpp",
-  "output": "CMakeFiles/my_program.dir/main.cpp.o"
-}
-]
+/home/akshat/Projects/gravityL/build/compile_commands.json

@@ -3,6 +3,9 @@ project(gravityL CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native -flto=thin -ffunction-sections -fdata-sections")
+set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -flto=thin -Wl,--gc-sections")
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -19,18 +22,7 @@ target_include_directories(gravityL PUBLIC
 )
 
 target_link_libraries(gravityL PRIVATE
-	-g -fsanitize=address,undefined # -D_GLIBCXX_DEBUG
+  # -g -fsanitize=address,undefined -D_GLIBCXX_DEBUG
 	${RAYLIB_LIBRARIES}
 )
 
-target_compile_options(gravityL PRIVATE
-    $<$<CONFIG:Debug>:-g -O0 -fsanitize=address,undefined -D_GLIBCXX_DEBUG>
-)
-target_link_options(gravityL PRIVATE
-    $<$<CONFIG:Debug>:-fsanitize=address,undefined>
-)
-
-# 3. Release mode optimizations (Optional - uncomment if needed)
-target_compile_options(gravityL PRIVATE
-    $<$<CONFIG:Release>:-O3 -march=native -flto>
-)
