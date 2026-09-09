@@ -9,8 +9,11 @@ set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -flto=thin
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(RAYLIB REQUIRED raylib)
+find_package(nlohmann_json 3.12.0 REQUIRED)
+
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 add_executable(gravityL ${SOURCES})
