@@ -1,0 +1,30 @@
+TODO LIST:
+
+
+- Make bullet trails behind the bullet that increases to a certain length after shooting.
+Using textures for that?
+
+
+- Make basic, circular enemies that track you.
+
+
+- Make them do damage.
+By close-range or bullets?
+
+
+- Add health to player and the enemies.
+
+- Draw health bar on top of enemies.
+
+- Add death screen with respawning.
+
+- Add cool stuff(For way later) like abilities and stuff.
+
+CURRENTLY WORKING ON:
+
+    Enemies - AT HALT
+
+    NEED TO REFACTOR CODE FIRST:
+        Need to make a config file to update/change variables from outside like speed or bullet size.
+        Would be trying to implement JSON myself for that.
+
