@@ -1,6 +1,5 @@
-#include <raylib.h>
 #include "player_arrow.h"
-#include "src/core/assetManager.h"
+#include "src/core/assetManager/assetManager.h"
 
 ArrowGun::ArrowGun(){ 
     maxCursorBound = { 50, 50 };

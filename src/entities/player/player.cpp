@@ -2,8 +2,8 @@
 
 
 #include "player.h"
-#include <raylib.h>
-#include <raymath.h>
+
+
 
 Player::Player( const float& x, const float& y) {
     position = { x/2, y/2 };

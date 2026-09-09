@@ -1,8 +1,8 @@
 #pragma once
 #include <raylib.h>
 #include <raymath.h>
-#include "../../core/bullet.h"
-#include "../../core/assetManager.h"
+#include "../../core/bullet/bullet.h"
+#include "../../core/assetManager/assetManager.h"
 
 class ArrowGun{
 private:

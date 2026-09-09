@@ -1,5 +1,5 @@
 #include "environment.h"
-#include <raylib.h>
+
 
 void Environment::genBuild( const int &maxBuilds, const int &screenHeight ){
     rectangleBuildings.resize(maxBuilds);
